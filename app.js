@@ -66,7 +66,7 @@ function scoreTrack(playerWin){
 // Main functions
 
 function playRound(playerSelection, computerSelection){
-    playerSelection = prompt("Kindly choose a tool", "").toLowerCase()
+    playerSelection = prompt("Rock, Paper or Scissors!", "").toLowerCase()
     computerSelection = getComputerChoice();
     currentRound++
 
