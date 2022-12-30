@@ -1,21 +1,54 @@
 /*
 Project: Rock, Paper or Scissors,
 You basically get asked would you like to choose Rock, Paper or Scissors and after you choose one
-it gets saved as player choice and you will play against computer, There will be 5 rounds, After every round
-There should be a message printed showing current result and round number and in the end when the 5 rounds finishes
+it gets saved as player choice and you will play against computer, whoever gets to 5 first wins
 a message containing the winner name should be printed
 */
+
+
+
+
+// variables
 
 const rock = "rock";
 const paper = "paper";
 const scissors = "scissors";
+const winningScore = 5;
 let playerScore = 0;
 let computerScore = 0;
+let currentRound = 0;
+let roundNumbers = (rounds) => {
+    if (playerScore === 5){
+        rounds = 0;
+        return Number(rounds);
+    }
+    else if (computerScore === 5){
+        rounds = 0;
+        return Number(rounds);
+    }
+    else {
+        rounds = 20
+        return Number(rounds);
+    }
+};
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+// Helper functions
 
 function getComputerChoice(){
     const words = [rock, paper, scissors];
     const random = Math.floor(Math.random()*words.length);
     return words[random];
+}
+
+function endResult(){
+    if (playerScore === winningScore){
+        alert("Player wins!");
+    }
+    else if (computerScore === winningScore){
+        alert("Computer wins");
+    }
 }
 
 function scoreTrack(playerWin){
@@ -27,9 +60,16 @@ function scoreTrack(playerWin){
     }
 }
 
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+
+// Main functions
+
 function playRound(playerSelection, computerSelection){
-    playerSelection = prompt("Kindly choose a tool", "").toLowerCase().trim()
-    computerSelection = getComputerChoice()
+    playerSelection = prompt("Kindly choose a tool", "").toLowerCase()
+    computerSelection = getComputerChoice();
+    currentRound++
+
         if (playerSelection === rock && computerSelection === rock){ //Draw
             alert("You & Computer both chose rock! It's a tie!");
         }
@@ -68,12 +108,15 @@ function playRound(playerSelection, computerSelection){
         }
         const roundMessage = `Computer : ${computerScore} \n Player : ${playerScore}`;
         alert(roundMessage);
+        endResult()
     }
 
 function game(){
-    for (let i=0; i<5; i++){
+    for (let i=0; i<roundNumbers(); i++){
         playRound();
     }
 }
 
 game();
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
