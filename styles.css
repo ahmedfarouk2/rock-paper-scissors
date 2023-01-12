@@ -1,0 +1,55 @@
+html {
+    background-image: linear-gradient(to right,red, yellow);
+    scroll-behavior: smooth;
+}
+
+#welcome {
+    text-align: center;
+    color: black;
+    margin-top: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+h2 {
+    text-align: center;
+    color: aquamarine;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+.game {
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.playing {
+    transform: scale(1.1);
+}
+
+#gamepics {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    gap: 500px;
+}
+
+.parentscores {
+    font-family: monospace;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+#resultparent {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    margin-top: 30px;
+}
